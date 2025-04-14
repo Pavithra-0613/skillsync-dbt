@@ -1,0 +1,32 @@
+name: 'skillsync_project'
+version: '1.0'
+config-version: 2
+
+profile: 'skillsync_profile'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+models:
+  skillsync_project:
+    +materialized: table    
+
+    staging:
+      +schema: staging      
+      +materialized: view    
+
+    marts:
+      +schema: analytics     
+      +materialized: table  
+
+      student_engagement:
+        +materialized: table
+
+      employer_hiring:
+        +materialized: table
+
+      platform_performance:
+        +materialized: table
