@@ -28,5 +28,5 @@ models:
       employer_hiring:
         +materialized: table
 
-      platform_performance:
+      Platform_performance:
         +materialized: table
