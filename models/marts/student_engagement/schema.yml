@@ -1,3 +1,5 @@
+version: 2
+
 models:
   - name: fact_student_engagement
     description: "Fact table capturing student learning behavior"
@@ -39,5 +41,5 @@ models:
     description: "Date dimension based on enrollment date"
     columns:
       - name: Date
+        description: "Date key"
         tests: [not_null]
-

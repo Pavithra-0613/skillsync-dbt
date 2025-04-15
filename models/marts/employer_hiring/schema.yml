@@ -1,4 +1,7 @@
-- name: fact_employer_hiring
+version: 2
+
+models:
+  - name: fact_employer_hiring
     description: "Fact table for job postings and hires"
     columns:
       - name: Job_ID
@@ -51,5 +54,5 @@
     description: "Date dimension based on job posting date"
     columns:
       - name: Date
+        description: "Date key"
         tests: [not_null]
-

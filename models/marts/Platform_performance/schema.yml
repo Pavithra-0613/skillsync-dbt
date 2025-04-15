@@ -1,4 +1,7 @@
-- name: fact_platform_performance
+- version: 2
+
+models:
+  - name: fact_platform_performance
     description: "Platform activity and performance metrics"
     columns:
       - name: Date
@@ -25,4 +28,5 @@
     description: "Date breakdown for platform activity"
     columns:
       - name: Date
+        description: "Date key"
         tests: [not_null]
