@@ -1,0 +1,43 @@
+models:
+  - name: fact_student_engagement
+    description: "Fact table capturing student learning behavior"
+    columns:
+      - name: Student_ID
+        description: "Unique student identifier"
+        tests: [not_null]
+      - name: Course_Name
+        description: "Course enrolled by the student"
+      - name: Enrollment_Date
+        description: "Date when the student enrolled"
+      - name: Completed_Modules
+        description: "Modules completed by the student"
+      - name: Certification_Obtained
+        description: "Certification earned"
+
+  - name: dim_student
+    description: "Dimension table with student ID and level"
+    columns:
+      - name: Student_ID
+        description: "Unique student ID"
+        tests: [not_null, unique]
+      - name: User_Level
+        description: "Beginner, Intermediate, Advanced"
+
+  - name: dim_course
+    description: "List of distinct courses"
+    columns:
+      - name: Course_Name
+        description: "Course title"
+
+  - name: dim_level
+    description: "Normalized level mapping"
+    columns:
+      - name: User_Level
+        description: "Proficiency level"
+
+  - name: dim_time
+    description: "Date dimension based on enrollment date"
+    columns:
+      - name: Date
+        tests: [not_null]
+

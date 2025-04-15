@@ -1,6 +1,8 @@
 sql
 Copy
 Edit
+{{ config(materialized='incremental') }}
+
 SELECT
     Student_ID,
     Activity_Date,
@@ -9,4 +11,4 @@ SELECT
     Time_Spent_Hours,
     Session_Duration_Min,
     Device_Type
-FROM {{ source('raw', 'activity_logs') }}
+FROM {{ ref('stg_activity_logs') }}
