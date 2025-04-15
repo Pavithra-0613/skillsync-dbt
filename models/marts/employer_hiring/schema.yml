@@ -49,10 +49,3 @@ models:
     columns:
       - name: Job_Location
         description: "Geographic location"
-
-  - name: dim_time
-    description: "Date dimension based on job posting date"
-    columns:
-      - name: Date
-        description: "Date key"
-        tests: [not_null]

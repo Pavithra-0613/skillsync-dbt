@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 SELECT
   TO_DATE(Date, 'DD-MM-YYYY') AS Date,
   Active_Users,
@@ -8,4 +10,4 @@ SELECT
   Platform_Crashes,
   Feedback_Score,
   Mobile_vs_Web_Usage
-FROM skillsync_raw.staging.platform_performance;
+FROM skillsync_raw.staging.platform_performance

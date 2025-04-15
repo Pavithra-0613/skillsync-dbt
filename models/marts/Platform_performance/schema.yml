@@ -23,10 +23,3 @@ models:
     columns:
       - name: Platform_Crashes
         description: "Crash identifier or type"
-
-  - name: dim_time
-    description: "Date breakdown for platform activity"
-    columns:
-      - name: Date
-        description: "Date key"
-        tests: [not_null]

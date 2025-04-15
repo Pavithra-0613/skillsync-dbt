@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 SELECT
   Student_ID,
   Course_Name,
@@ -9,4 +11,4 @@ SELECT
   Total_Time_Spent_Hours,
   Active_Days,
   Certification_Obtained
-FROM skillsync_raw.staging.student_engagement;
+FROM skillsync_raw.staging.student_engagement

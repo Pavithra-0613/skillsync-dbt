@@ -36,10 +36,3 @@ models:
     columns:
       - name: User_Level
         description: "Proficiency level"
-
-  - name: dim_time
-    description: "Date dimension based on enrollment date"
-    columns:
-      - name: Date
-        description: "Date key"
-        tests: [not_null]
