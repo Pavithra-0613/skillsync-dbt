@@ -14,7 +14,7 @@ WITH job_applications AS (
         e.application_channel,  -- Channel through which the student applied (e.g., website, referral)
         e.region,  -- Geographical region of the job
         COUNT(e.student_id) AS total_applications  -- Aggregating the number of applications per job
-    FROM {{ ref('staging_employer_hiring') }} AS e
+    FROM {{ ref('stg_employer_hiring') }} AS e
     GROUP BY
         e.job_id,
         e.student_id,

@@ -1,12 +1,9 @@
-sql
-Copy
-Edit
 {{ config(materialized='incremental') }}
 
 SELECT
-    f.Student_ID,
-    f.Course_Name,
-    f.Feedback_Score,
-    f.Feedback_Comment,
-    f.Submitted_On
-FROM {{ ref('stg_feedback') }} f
+  Date,
+  Feedback_Score,
+  Platform_Crashes,
+  Avg_Session_Duration_Minutes,
+  Mobile_vs_Web_Usage
+FROM {{ ref('stg_platform_performance') }}
