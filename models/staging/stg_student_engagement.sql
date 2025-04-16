@@ -1,3 +1,3 @@
 {{ config(materialized='view') }}
 
-SELECT * FROM skillsync_raw.staging.student_engagement
+SELECT * FROM skillsync_raw.stg_student_engagement

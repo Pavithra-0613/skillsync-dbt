@@ -1,3 +1,3 @@
 {{ config(materialized='view') }}
 
-SELECT * FROM skillsync_raw.staging.platform_performance
+SELECT * FROM skillsync_raw.stg_platform_performance
