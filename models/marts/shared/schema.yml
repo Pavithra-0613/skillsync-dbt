@@ -4,6 +4,6 @@ models:
   - name: dim_time
     description: "Centralized time dimension used across all star schemas"
     columns:
-      - name: Date
+      - name: date_key
         description: "Date key"
         tests: [not_null]
