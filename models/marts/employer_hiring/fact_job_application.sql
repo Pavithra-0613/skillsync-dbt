@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH job_applications AS (
     SELECT
         e.job_id, 
@@ -40,4 +42,4 @@ SELECT
     application_channel,
     region,
     total_applications
-FROM job_applications;
+FROM job_applications
