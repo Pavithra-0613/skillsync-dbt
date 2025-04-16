@@ -3,3 +3,4 @@
 SELECT DISTINCT
   Mobile_vs_Web_Usage AS platform_type
 FROM {{ ref('stg_platform_performance') }}
+WHERE Mobile_vs_Web_Usage IS NOT NULL
