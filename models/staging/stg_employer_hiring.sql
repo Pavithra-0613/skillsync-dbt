@@ -1,1 +1,1 @@
-SELECT * FROM skillsync_raw.staging.employer_hiring;
+SELECT * FROM skillsync_raw.stg_employer_hiring;
