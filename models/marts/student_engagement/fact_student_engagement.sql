@@ -21,7 +21,7 @@ SELECT
   src.Student_ID,
   src.Course_Name,
   src.Enrollment_Date,
-  dt.Date AS date_key,  -- from dim_time
+  dt.date_key, 
   src.Completed_Modules,
   src.Average_Score AS assessment_score,
   src.Last_Activity_Date,
@@ -34,4 +34,4 @@ SELECT
 
 FROM source AS src
 LEFT JOIN dim_time dt
-  ON src.Enrollment_Date = dt.Date
+  ON src.Enrollment_Date = dt.date_key
