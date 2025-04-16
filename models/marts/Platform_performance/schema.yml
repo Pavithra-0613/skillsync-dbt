@@ -13,13 +13,27 @@ models:
         description: "Count of platform crashes"
 
   - name: dim_platform
-    description: "Mobile or web platform"
+    description: "Mobile or web platform dimension"
     columns:
       - name: platform_type
-        description: "Mobile or Web"
+        description: "Indicates whether the user accessed the platform via mobile or web"
+        tests: [not_null]
 
   - name: dim_crash_type
-    description: "Crash reasons and categories (optional)"
+    description: "Crash reasons and severity labels"
     columns:
-      - name: platform_crashes
-        description: "Crash identifier or type"
+      - name: crash_key
+        description: "Crash severity level as a key (0–4)"
+        tests: [not_null, unique]
+      - name: crash_type
+        description: "Crash severity label (e.g., None, Minor, Moderate, Critical)"
+
+  - name: dim_user_engagement
+    description: "User engagement level based on active users"
+    columns:
+      - name: active_users
+        description: "Number of active users for a given day"
+        tests: [not_null]
+      - name: engagement_level
+        description: "Engagement category (Low, Medium, High)"
+        tests: [not_null]

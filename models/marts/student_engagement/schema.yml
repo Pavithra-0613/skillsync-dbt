@@ -4,35 +4,35 @@ models:
   - name: fact_student_engagement
     description: "Fact table capturing student learning behavior"
     columns:
-      - name: Student_ID
+      - name: student_id
         description: "Unique student identifier"
         tests: [not_null]
-      - name: Course_Name
+      - name: course_name
         description: "Course enrolled by the student"
-      - name: Enrollment_Date
+      - name: enrollment_date
         description: "Date when the student enrolled"
-      - name: Completed_Modules
+      - name: completed_modules
         description: "Modules completed by the student"
-      - name: Certification_Obtained
-        description: "Certification earned"
+      - name: course_certified_flag
+        description: "Binary flag for whether the student earned a certificate (1 = Yes, 0 = No)"
 
   - name: dim_student
     description: "Dimension table with student ID and level"
     columns:
-      - name: Student_ID
+      - name: student_id
         description: "Unique student ID"
         tests: [not_null, unique]
-      - name: User_Level
+      - name: user_level
         description: "Beginner, Intermediate, Advanced"
 
   - name: dim_course
     description: "List of distinct courses"
     columns:
-      - name: Course_Name
+      - name: course_name
         description: "Course title"
 
   - name: dim_level
     description: "Normalized level mapping"
     columns:
-      - name: User_Level
+      - name: user_level
         description: "Proficiency level"
