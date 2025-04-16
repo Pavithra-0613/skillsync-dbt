@@ -4,22 +4,22 @@ models:
   - name: fact_platform_performance
     description: "Platform activity and performance metrics"
     columns:
-      - name: Date
-        description: "Activity date"
+      - name: date_key
+        description: "Surrogate key from dim_time"
         tests: [not_null]
-      - name: Active_Users
+      - name: active_users
         description: "Daily active users"
-      - name: Platform_Crashes
+      - name: platform_crashes
         description: "Count of platform crashes"
 
   - name: dim_platform
     description: "Mobile or web platform"
     columns:
-      - name: Platform_Type
+      - name: platform_type
         description: "Mobile or Web"
 
   - name: dim_crash_type
     description: "Crash reasons and categories (optional)"
     columns:
-      - name: Platform_Crashes
+      - name: platform_crashes
         description: "Crash identifier or type"
