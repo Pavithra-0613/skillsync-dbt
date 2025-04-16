@@ -3,40 +3,17 @@
 WITH job_applications AS (
     SELECT
         job_id,
-        application_status,
-        application_date,
-        interview_date,
-        hiring_status,
-        job_role,
+        job_title,
         company_name,
+        required_skills,
         salary_offered,
-        application_channel,
-        region,
-        COUNT(*) AS total_applications
+        job_location,
+        job_posting_date,
+        employment_type,
+        applications_received,
+        hires_made
     FROM {{ ref('stg_employer_hiring') }}
-    GROUP BY
-        job_id,
-        application_status,
-        application_date,
-        interview_date,
-        hiring_status,
-        job_role,
-        company_name,
-        salary_offered,
-        application_channel,
-        region
 )
 
-SELECT
-    job_id,
-    application_status,
-    application_date,
-    interview_date,
-    hiring_status,
-    job_role,
-    company_name,
-    salary_offered,
-    application_channel,
-    region,
-    total_applications
+SELECT *
 FROM job_applications

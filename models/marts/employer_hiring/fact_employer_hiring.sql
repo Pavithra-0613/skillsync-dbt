@@ -1,12 +1,14 @@
+{{ config(materialized='table') }}
+
 SELECT
-  Job_ID,
-  Company_Name,
-  Job_Title,
-  Required_Skills,
-  Salary_Offered,
-  Job_Location,
-  Job_Posting_Date,
-  Applications_Received,
-  Hires_Made,
-  Employment_Type
-FROM {{ ref('stg_employer_hiring') }};
+  job_id,
+  company_name,
+  job_title,
+  required_skills,
+  salary_offered,
+  job_location,
+  job_posting_date,
+  applications_received,
+  hires_made,
+  employment_type
+FROM {{ ref('stg_employer_hiring') }}
