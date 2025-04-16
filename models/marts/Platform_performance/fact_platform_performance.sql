@@ -20,7 +20,8 @@ dim_time AS (
 )
 
 SELECT
-  s.Date AS date_key,
+  s.Date AS platform_date,
+  dt.date_key,
   s.Active_Users AS active_users,
   s.New_Enrollments AS new_enrollments,
   s.Course_Completions AS course_completions,
@@ -31,4 +32,4 @@ SELECT
   s.Mobile_vs_Web_Usage AS platform_type
 FROM source s
 LEFT JOIN dim_time dt
-  ON s.Date = dt.Date
+  ON s.Date = dt.date_key
