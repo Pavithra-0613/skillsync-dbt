@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 SELECT DISTINCT
-  Employment_Type
-FROM {{ ref('stg_employer_hiring') }};
+  Employment_Type AS employment_type
+FROM {{ ref('stg_employer_hiring') }}
